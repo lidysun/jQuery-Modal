@@ -14,14 +14,12 @@
             modal: null, //页面上是否已存在 ok
             type: null, //类型：alert|confirm|dialog|tips|popbox
             title: null, //标题 ok
-            boxClass: '', //ok
+            boxClass: '', //modal为假时调用时必须传递boxClassok ok
             animate: true, //是否开启动画效果 //ok
-
             width: 600, //ok
             height: 400, //ok
             top: 0.3, //ok
             left: 0.5, //ok
-
             effect: 'fade', //出现时效果：none|fall|zoom|fade|fadeUp|fadeDown|fadeLeft|fadeRight
             effectOut: null, //关闭时效果：同上
             mask: true, //是否显示遮罩mask层 ok
@@ -88,7 +86,6 @@
                         }
                     }
                 } catch (err) {
-                    //modal为假时调用时必须传递boxClass
                     console.error('"boxClass" is necessary if opt.modal is false !');
                 }
             } else {
