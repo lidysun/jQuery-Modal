@@ -62,6 +62,11 @@
             me.get('closeBtns').on('click', function() {
                 me.close();
             });
+
+            //Esc关闭
+            $(document).keydown(function(e) {
+                e.keyCode == 27 && me.close();
+            });
         },
         //创建html结构
         initHtml: function() {
