@@ -14,7 +14,7 @@
             modal: null, //页面上是否已存在 ok
             type: null, //类型：alert|confirm|dialog|tips|popbox
             title: null, //标题 ok
-            boxClass: '', //modal为假时调用时必须传递boxClassok ok
+            boxClass: '', //页面上不存在modal时必须传递boxClass ok
             animate: true, //是否开启动画效果 //ok
             width: 600, //ok
             height: 400, //ok
