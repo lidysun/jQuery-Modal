@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>please enter your title</title>
+        <meta charset="utf-8">
+        <meta name="Author" content="年轻人">
+        <style type='text/css'>
+        body{background:#f1f1f1;}
+        button{margin:50px 0 0 50px;}
+        .hide{display: none;}
+        </style>
+    </head>
+    <body>
+        <!--#include virtual="/inc/html/global/cart.shtml"-->
+        <div class="poptest hide">
+            pop from
+            <span>modal:'.poptest'</span><br>
+            <input type="text" value="modal:.poptest">
+            <input type="button" class="modal-close" value="关闭">
+            <input type="button" id="j_btnBtns" value="closeHandle button">
+        </div>
+        <button id="btn">弹窗1 create</button>
+        <button id="btn2">弹窗2 modal</button>
+        <button id="btn3">弹窗3 create</button>
+        <script src="http://apps.bdimg.com/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script src="./jquery.modal.js"></script>
+        <script>
+            $('#btn').on('click',function() {
+                var p = new Modal({
+                    mask:1,
+                    boxClass:'modal1',
+                    title:'this is the modal title 1',
+                    maskCloseable:true,
+                    remove:0,
+                    closeBtn:'btn-close',
+                    beforeShowFn:function(modal){
+                        console.log('beforeShow')
+                    },
+                    showedFn:function(modal){
+                        console.log('showed');
+                    },
+                    beforeCloseFn:function(modal){
+                        console.log('beforeClose');
+                    },
+                    closedFn:function(modal){
+                        console.log('closed');
+                    }
+                }); 
+            });
+            $('#btn2').on('click',function() {
+                var p2 = $('.poptest').popbox({
+                    title:'<h3>created html <input value="pop1">!</h3>',
+                    modal:$('.poptest'),
+                    width:300,
+                    height:200,
+                    animate:0,
+                    remove:true,
+                    maskCloseable:true,
+                    closeHandle:'#j_btnBtns',
+                    beforeShowFn:function(modal){
+                        console.log('beforeShow');
+                    },
+                    showedFn:function(modal){
+                        console.log('showed');
+                    },
+                    beforeCloseFn:function(modal){
+                        console.log('beforeClose');
+                    },
+                    closedFn:function(modal){
+                        console.log('closed');
+                    }
+                });
+            });
+
+            $('#btn3').on('click',function() {
+                var p3 = new Modal({
+                    title:'created html 3!',
+                    boxClass:'created3',
+                    maskCloseable:true
+                }); 
+            });
+        </script>
+    </body>
+</html>
